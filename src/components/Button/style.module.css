@@ -1,0 +1,36 @@
+.button {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #ffe445;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  width: 250px;
+  height: 43px;
+  cursor: pointer;
+}
+.plus::before,
+.plus::after {
+  content: '';
+  background-color: #333;
+  width: 1.5px;
+  height: 10px;
+  position: absolute;
+  left: 25%;
+  bottom: 39%;
+  border-radius: 1px;
+}
+.plus::before {
+  transform: rotate(90deg);
+}
+.s {
+  width: 152px;
+}
+.l {
+  width: 312px;
+}

@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+.page {
+  padding: 37px 130px;
+  background: #f5f5f5;
+}
+.main {
+  margin-top: 80px;
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: 278px 278px 278px;
+}
+.column {
+  max-width: 277px;
+  border-radius: 7px;
+}
+.column__header {
+  margin: 0 0 14px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-indent: 27px;
+}
+
+.column__body {
+  border: 1px solid #cacaca;
+  border-radius: 7px;
+}
+.column__body > div {
+  margin: 10px 14px;
+}
+.column__body > button {
+  margin: 2px 12px 14px 14px;
+}

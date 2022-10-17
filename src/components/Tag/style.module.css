@@ -1,0 +1,42 @@
+.tag {
+  height: 24px;
+  width: 80px;
+  display: block;
+  border-radius: 2px;
+}
+.violet {
+  background-color: #eee1fd;
+}
+.green {
+  background-color: #baf8cf;
+}
+.red {
+  background-color: #fed6cc;
+}
+.orange {
+  background-color: #ffdcb6;
+}
+.blue {
+  background-color: #b8e6ff;
+}
+.lightgreen {
+  background-color: #d8fcb0;
+}
+.darkblue {
+  background-color: #c6d9ff;
+}
+.yellow {
+  background-color: #fff4c7;
+}
+.l {
+  width: 90px;
+  height: 24px;
+}
+.m {
+  width: 60px;
+  height: 24px;
+}
+.s {
+  width: 40px;
+  height: 18px;
+}

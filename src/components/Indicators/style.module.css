@@ -1,0 +1,12 @@
+.icons {
+  width: 42px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.icon {
+  height: 15.83px;
+  width: 15.83px;
+  display: inline-block;
+}

@@ -1,0 +1,41 @@
+.header {
+  box-sizing: border-box;
+  height: 36px;
+  width: 168px;
+  background-color: #e3e3e3;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333;
+  padding: 10px;
+  position: relative;
+  border-radius: 3px 3px 0px 0px;
+  vertical-align: center;
+  border: 0;
+}
+.header img {
+  position: absolute;
+  height: 10px;
+  width: 8.75px;
+  top: 14.5px;
+  right: 10px;
+}
+.list {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  width: 168px;
+  height: 146px;
+  background: #d8d7d7;
+  border-radius: 0px 0px 3px 3px;
+  margin: 0 0 14px 0;
+  padding: 10px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.hide {
+  display: none;
+}
