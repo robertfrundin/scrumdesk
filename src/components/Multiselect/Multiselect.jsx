@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 import arrow from './assets/arrow.svg'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { Tag } from '../Tag/Tag'
-export const Multiselect = () => {
+export const Multiselect = ({ selectedColors }) => {
   const colors = ['violet', 'green', 'red', 'orange', 'blue', 'lightgreen', 'darkblue', 'yellow']
   const [closed, setClosed] = useState(true)
   return (
     <React.Fragment>
-      <button onClick={() => setClosed(!closed)} className={styles.header}>
+      <button type="button" onClick={() => setClosed(!closed)} className={styles.header}>
         Выбрать тэг
         <img src={arrow} alt="" />
       </button>
@@ -18,7 +18,7 @@ export const Multiselect = () => {
             return (
               <li key={idx} className={styles.item}>
                 <Tag color={color} size="l"></Tag>
-                <Checkbox></Checkbox>
+                <Checkbox color={color}></Checkbox>
               </li>
             )
           })}

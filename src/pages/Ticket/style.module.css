@@ -16,6 +16,10 @@
   cursor: pointer;
   margin-bottom: 74px;
 }
+.ticket a {
+  color: #000;
+  text-decoration: none;
+}
 .back::before {
   position: absolute;
   top: 5.5px;
@@ -115,7 +119,8 @@
 .options__popup {
   z-index: 2;
   position: relative;
-  right: 108px;
+  right: -325px;
+  top: 100px;
   width: 132px;
   background: #fff;
   box-shadow: 2px 3px 5px 0px #0000001f;

@@ -1,129 +1,142 @@
 import { createSlice } from '@reduxjs/toolkit'
 const myState = {
-  createModalOpened: false,
-  tickets: {
-    todo: [
-      {
-        name: 'Создать проект',
-        tags: ['violet', 'red'],
-        indicators: {
-          warning: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+  deleteModalOpened: false,
+  selectedColors: [],
+  tickets: [
+    {
+      category: 'Todo',
+      name: 'Создать проект',
+      tags: ['violet', 'red'],
+      indicators: {
+        warning: true,
       },
-      {
-        name: 'Нарисовать иллюстрации',
-        tags: ['violet', 'green', 'red'],
+      id: 0,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+    {
+      category: 'Todo',
+      name: 'Нарисовать иллюстрации',
+      tags: ['violet', 'green', 'red'],
 
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+      id: 1,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+    {
+      category: 'Todo',
+      name: 'Нарисовать иллюстрации',
+      tags: ['violet', 'green', 'red'],
+      indicators: {
+        warning: true,
+        comment: true,
       },
-      {
-        name: 'Нарисовать иллюстрации',
-        tags: ['violet', 'green', 'red'],
-        indicators: {
-          warning: true,
-          comment: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+      id: 2,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+
+    {
+      category: 'In progress',
+      name: 'Нарисовать иллюстрации',
+      tags: ['violet', 'green', 'red'],
+      indicators: {
+        warning: true,
+        comment: true,
       },
-    ],
-    inprogress: [
-      {
-        name: 'Нарисовать иллюстрации',
-        tags: ['violet', 'green', 'red'],
-        indicators: {
-          warning: true,
-          comment: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+      id: 3,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+    {
+      category: 'In progress',
+      name: 'Нарисовать иллюстрации',
+      tags: ['violet', 'green', 'red'],
+      indicators: {
+        warning: true,
+        comment: true,
       },
-      {
-        name: 'Нарисовать иллюстрации',
-        tags: ['violet', 'green', 'red'],
-        indicators: {
-          warning: true,
-          comment: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+      id: 4,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+    {
+      category: 'In progress',
+      name: 'Удалить все',
+      tags: ['violet'],
+      indicators: {
+        warning: true,
+        comment: true,
       },
-      {
-        name: 'Удалить все',
-        tags: ['violet'],
-        indicators: {
-          warning: true,
-          comment: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+      id: 5,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+
+    {
+      category: 'Done',
+      name: 'Нарисовать иллюстрации',
+      tags: ['violet', 'green', 'red'],
+      indicators: {
+        warning: true,
+        comment: true,
       },
-    ],
-    done: [
-      {
-        name: 'Нарисовать иллюстрации',
-        tags: ['violet', 'green', 'red'],
-        indicators: {
-          warning: true,
-          comment: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+      id: 6,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+    {
+      category: 'Done',
+      name: 'Нарисовать иллюстрации',
+      tags: ['violet', 'green', 'red'],
+      indicators: {
+        warning: true,
+        comment: true,
       },
-      {
-        name: 'Нарисовать иллюстрации',
-        tags: ['violet', 'green', 'red'],
-        indicators: {
-          warning: true,
-          comment: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
+      id: 7,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+    {
+      category: 'Done',
+      name: 'Купить воды',
+      tags: ['blue'],
+      indicators: {
+        comment: true,
       },
-      {
-        name: 'Купить воды',
-        tags: ['blue'],
-        indicators: {
-          comment: true,
-        },
-        comment: {
-          author: 'Иванов Иван',
-          text: 'Просто комментарий',
-        },
-      },
-    ],
-  },
+      id: 8,
+      comments: [{ author: 'Иван', text: 'Просто комментарий' }],
+    },
+  ],
 }
 const toolkitSlice = createSlice({
   name: 'toolkit',
   initialState: myState,
   reducers: {
-    createTicket(state, action) {
-      state.tickets[action.payload.category].push(action.payload.ticket)
+    setDeleteModal(state) {
+      state.deleteModalOpened = !state.deleteModalOpened
     },
-    setCreateModal(state) {
-      state.createModalOpened = !state.createModalOpened
+    deleteTicket(state, action) {
+      const index = state.tickets.findIndex((el) => el.id == action.payload)
+      state.tickets.splice(index, 1)
+    },
+    addColor(state, action) {
+      state.selectedColors.push(action.payload)
+    },
+    removeColor(state, action) {
+      const index = state.selectedColors.indexOf(action.payload)
+      state.selectedColors.splice(index, 1)
+    },
+    clearColors(state) {
+      state.selectedColors = []
+    },
+    createTicket(state, action) {
+      state.tickets.push(action.payload)
+    },
+    editTicket(state, action) {
+      const idx = state.tickets.findIndex((el) => el.id == action.payload.id)
+
+      for (let key of Object.keys(action.payload)) {
+        state.tickets[idx][key] = action.payload[key]
+      }
+    },
+    addComment(state, action) {
+      const idx = state.tickets.findIndex((el) => el.id == action.payload.id)
+      state.tickets[idx].comments ? state.tickets[idx].comments.push(action.payload.comment) : (state.tickets[idx].comments = [action.payload.comment])
     },
   },
 })
 export default toolkitSlice.reducer
-export const { createTicket, setCreateModal } = toolkitSlice.actions
+export const { addComment, deleteTicket, setDeleteModal, clearColors, createTicket, editTicket, addColor, removeColor, setCreateModal } = toolkitSlice.actions

@@ -1,10 +1,21 @@
 import styles from './style.module.css'
 import React from 'react'
-export const Checkbox = ({ text }) => {
+import { addColor, removeColor } from '../../Redux/toolkitSlice'
+import { store } from '../../Redux'
+import { useDispatch } from 'react-redux'
+export const Checkbox = ({ text, color, checked }) => {
+  const dispatch = useDispatch()
   return (
     <div className={styles.checkbox__container}>
-      <input type="checkbox" id="c1" className={styles.checkbox}></input>
-      <label for="c1" className={styles.label}>
+      <input
+        onClick={(event) => {
+          event.target.checked ? store.dispatch(addColor(color)) : store.dispatch(removeColor(color))
+        }}
+        type="checkbox"
+        id="c1"
+        className={styles.checkbox}
+      ></input>
+      <label htmlFor="c1" className={styles.label}>
         {text}
       </label>
     </div>

@@ -1,5 +1,6 @@
 .modal__wrap {
   position: fixed;
+  top: 0;
   height: 100%;
   width: 100%;
   padding-top: 324px;
@@ -33,6 +34,7 @@
   width: 94px;
   border-radius: 4px;
   padding: 9px 30px 9px 30px;
+  cursor: pointer;
 }
 .buttons button:nth-child(1) {
   margin-right: 12px;
